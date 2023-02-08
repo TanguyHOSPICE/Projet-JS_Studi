@@ -62,6 +62,15 @@ function validateText(input) {
 	return input.value.match('^[A-Za-z]+$');
 }
 
+//19- Validation email
+function validateEmail(input) {
+	let EMAIL = input.value;
+	let POSAT = EMAIL.indexOf('@');
+	let POSDOT = EMAIL.lastIndexOf('.');
+
+	return !(POSAT < 1 || POSDOT - POSAT < 2);
+}
+
 //11- Validations globales : creation fonction qui récup ttes validations = validateFields
 function validateFields(input) {
 	//12- Récup champ des inputs - une fs récup lancer la validation
@@ -83,6 +92,13 @@ function validateFields(input) {
 			return false;
 		}
 
+		return true;
+	}
+
+	if (fieldName == 'email') {
+		if (!validateEmail(input)) {
+			return false;
+		}
 		return true;
 	}
 }
