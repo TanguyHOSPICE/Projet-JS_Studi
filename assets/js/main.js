@@ -17,7 +17,7 @@
 					//5- On rentre tous les input ds tbl et les valident 1par1
 					if (!validateFields(input)) {
 						//Ajout lors des Validations
-						alert('1');
+						// alert('1');
 						//6- Stopper absolument la validation
 						event.preventDefault();
 						//7- Stopper absolument les propagations
@@ -31,7 +31,7 @@
 						input.nextElementSibling.style.display = 'block';
 					} else {
 						//Ajout lors des Validations
-						alert('3');
+						// alert('3');
 						//9-écriture de l'inv à 8-
 						input.nextElementSibling.style.display = 'none';
 						input.classList.remove('is-invalid');
@@ -51,6 +51,11 @@ function validateRequired(input) {
 	return !(input.value == null || input.value == '');
 }
 
+//15- Validation du nb de string : MIN & MAX
+function validateLength(input, minLength, maxLength) {
+	return !(input.value.length < minLength || input.value.length > maxLength);
+}
+
 //11- creation fonction qui récup ttes validations : validateFields
 function validateFields(input) {
 	//12- Récup champ des inputs - une fs récup lancer la validation
@@ -59,6 +64,11 @@ function validateFields(input) {
 	if (fieldName == 'firstName') {
 		//14- lance validation
 		if (!validateRequired(input)) {
+			return false;
+		}
+
+		//16- lance validation validateLength
+		if (!validateLength(input, 2, 20)) {
 			return false;
 		}
 
