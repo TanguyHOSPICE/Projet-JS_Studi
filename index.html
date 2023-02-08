@@ -16,8 +16,8 @@
     <div class="container d-flex flex-column min-vh-100 justify-content-center align-items-center ">
         <h1>Formulaire JS</h1>
 
-        <!-- 2-Ajout FORM class = "row g-3 needs-validation" id="lessonForm" -->
-        <!-- 3-FORM transmissions :  novalidate -->
+        <!-- 2-Ajout FORM class = "row g-3" id="lessonForm" -->
+        <!-- 3-FORM Validations :  novalidate class="... needs-validation" -->
         <form class="row g-3 needs-validation" id="lessonForm">
             <div class="col-md-6">
                 <!-- class de label = form-label -->
@@ -25,9 +25,10 @@
                 <!-- Donne for (label ) = name = id -->
                 <input type="text" class="form-control" name="firstName" id="firstName">
                 <!-- Ajout Après Set Up basic form -->
-                <!-- <div class="invalid-feedback">
+                <!-- 3-DIV Validations ou invalid retours :  (selon MODEL BOOTSTRAP)-->
+                <div class="invalid-feedback">
                     Veuillez saisir votre prénom.
-                </div> -->
+                </div>
             </div>
             <div class="col-md-6">
                 <!-- class de label = form-label -->
@@ -35,9 +36,10 @@
                 <!-- Donne for (label ) = name = id -->
                 <input type="text" class="form-control" name="lastName" id="lastName">
                 <!-- Ajout Après Set Up basic form -->
-                <!-- <div class="invalid-feedback">
+                <!-- 3-DIV Validations ou invalid retours :  (selon MODEL BOOTSTRAP)-->
+                <div class="invalid-feedback">
                     Veuillez saisir votre nom.
-                </div> -->
+                </div>
             </div>
             <div class="col-md-6">
                 <!-- class de label = form-label -->
@@ -45,9 +47,10 @@
                 <!-- Donne for (label ) = name = id -->
                 <input type="email" class="form-control" name="email" id="email">
                 <!-- Ajout Après Set Up basic form -->
-                <!-- <div class="invalid-feedback">
+                <!-- 3-DIV Validations ou invalid retours :  (selon MODEL BOOTSTRAP)-->
+                <div class="invalid-feedback">
                     Veuillez saisir votre e-mail.
-                </div> -->
+                </div>
             </div>
             <div class="col-md-6">
                 <!-- class de label = form-label -->
@@ -55,9 +58,10 @@
                 <!-- Donne for (label ) = name = id -->
                 <input type="tel" class="form-control" name="phoneNumber" id="phoneNumber">
                 <!-- Ajout Après Set Up basic form -->
-                <!-- <div class="invalid-feedback">
+                <!-- 3-DIV Validations ou invalid retours :  (selon MODEL BOOTSTRAP)-->
+                <div class="invalid-feedback">
                     Veuillez saisir votre numéro de téléphone.
-                </div> -->
+                </div>
             </div>
             <div class="col-md-6">
                 <!-- class de label = form-label -->
@@ -65,9 +69,10 @@
                 <!-- Donne for (label ) = name = id -->
                 <input type="text" class="form-control" name="address" id="address">
                 <!-- Ajout Après Set Up basic form -->
-                <!-- <div class="invalid-feedback">
+                <!-- 3-DIV Validations ou invalid retours :  (selon MODEL BOOTSTRAP)-->
+                <div class="invalid-feedback">
                     Veuillez saisir votre adresse.
-                </div> -->
+                </div>
             </div>
             <!-- SELECT -->
             <div class="col-md-6">
@@ -75,7 +80,7 @@
                 <label for="city" class="form-label">Ville</label>
                 <!-- Donne for (label ) = name = id -->
                 <select class="form-select" name="city" id="city">
-                    <!-- 3-OPTION transmissions :   selected disabled -->
+                    <!-- 3-OPTION Validations :   selected disabled -->
                     <option value="">Choose a city ...</option>
                     <option>Paris</option>
                     <option>Lyon</option>
@@ -83,9 +88,10 @@
                     <option>Lille</option>
                 </select>
                 <!-- Ajout Après Set Up basic form -->
-                <!-- <div class="invalid-feedback">
+                <!-- 3-DIV Validations ou invalid retours :  (selon MODEL BOOTSTRAP)-->
+                <div class="invalid-feedback">
                     Veuillez choisir une ville.
-                </div> -->
+                </div>
             </div>
             <div class="col-md-6">
                 <!-- class de label = form-label -->
@@ -93,9 +99,10 @@
                 <!-- Donne for (label ) = name = id -->
                 <input type="text" class="form-control" name="postCode" id="postCode">
                 <!-- Ajout Après Set Up basic form -->
-                <!-- <div class="invalid-feedback">
+                <!-- 3-DIV Validations ou invalid retours :  (selon MODEL BOOTSTRAP)-->
+                <div class="invalid-feedback">
                     Veuillez saisir votre code postal.
-                </div> -->
+                </div>
             </div>
             <!-- CHECKBOX -->
             <!-- Prend tte la place col-12 -->
@@ -105,9 +112,10 @@
                     <!-- Donne for (label ) = name = id -->
                     <input type="checkbox" class="form-check-input" id="conditions" name="conditions">
                     <!-- Ajout Après Set Up basic form -->
-                    <!-- <div class="invalid-feedback">
+                    <!-- 3-DIV Validations ou invalid retours :  (selon MODEL BOOTSTRAP)-->
+                    <div class="invalid-feedback">
                         Merci de lire les conditions avant de valider le formulaire.
-                    </div> -->
+                    </div>
                 </div>
             </div>
             <!-- BUTTON -->
