@@ -44,3 +44,25 @@
 	);
 })();
 //=============== END - DECLARATION DU FORMULAIRE ===============//
+//=============== START - VALIDATION DU FORMULAIRE ===============//
+
+//10- Validation d'un champ REQUIRED : validateRequired
+function validateRequired(input) {
+	return !(input.value == null || input.value == '');
+}
+
+//11- creation fonction qui récup ttes validations : validateFields
+function validateFields(input) {
+	//12- Récup champ des inputs - une fs récup lancer la validation
+	let fieldName = input.name;
+	//13- condition pr lancer la valid.
+	if (fieldName == 'firstName') {
+		//14- lance validation
+		if (!validateRequired(input)) {
+			return false;
+		}
+
+		return true;
+	}
+}
+//=============== END - VALIDATION DU FORMULAIRE ===============//
