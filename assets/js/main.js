@@ -56,7 +56,13 @@ function validateLength(input, minLength, maxLength) {
 	return !(input.value.length < minLength || input.value.length > maxLength);
 }
 
-//11- creation fonction qui récup ttes validations : validateFields
+//17- Validation des string : LATIN & LETTRES
+function validateText(input) {
+	//doit matcher avec REGEX choisi (regexr.com): je veux ts les elt qui vont de A-Z et a-z +
+	return input.value.match('^[A-Za-z]+$');
+}
+
+//11- Validations globales : creation fonction qui récup ttes validations = validateFields
 function validateFields(input) {
 	//12- Récup champ des inputs - une fs récup lancer la validation
 	let fieldName = input.name;
@@ -69,6 +75,11 @@ function validateFields(input) {
 
 		//16- lance validation validateLength
 		if (!validateLength(input, 2, 20)) {
+			return false;
+		}
+
+		//18- lance validation validateText
+		if (!validateText(input)) {
 			return false;
 		}
 
