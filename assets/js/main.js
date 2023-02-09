@@ -71,6 +71,11 @@ function validateEmail(input) {
 	return !(POSAT < 1 || POSDOT - POSAT < 2);
 }
 
+//20- Validation code postale
+function validatePostCode(input) {
+	return input.value.match('^(0[1-9]|[1-9][0-9])[0-9][0-9][0-9]$');
+}
+
 //11- Validations globales : creation fonction qui récup ttes validations = validateFields
 function validateFields(input) {
 	//12- Récup champ des inputs - une fs récup lancer la validation
@@ -94,9 +99,18 @@ function validateFields(input) {
 
 		return true;
 	}
-
+	//19a- condition pr lancer la valid.
 	if (fieldName == 'email') {
+		//19b- lance validation validateEmail
 		if (!validateEmail(input)) {
+			return false;
+		}
+		return true;
+	}
+	//20a- condition pr lancer la valid.
+	if (fieldName == 'postCode') {
+		//20b- lance validation validatePostCode
+		if (!validatePostCode(input)) {
 			return false;
 		}
 		return true;
