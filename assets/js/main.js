@@ -85,6 +85,11 @@ function validatePhoneNumber(input) {
 	return input.value.match(/^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/);
 }
 
+//23- Validation d'un checkbox
+function validateTerms(input) {
+	return input.checked;
+}
+
 //=============== START - VALIDATION DU FORMULAIRE ===============//
 //11- Validations globales : creation fonction qui récup ttes validations = validateFields
 function validateFields(input) {
@@ -153,6 +158,14 @@ function validateFields(input) {
 		if (!validatePostCode(input)) {
 			return false;
 		}
+		return true;
+	}
+	//23a- Validaton de la checkbox CONDTIONS
+	if (fieldName == 'conditions') {
+		if (!validateTerms(input)) {
+			return false;
+		}
+
 		return true;
 	}
 }
