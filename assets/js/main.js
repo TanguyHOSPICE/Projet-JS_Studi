@@ -44,7 +44,6 @@
 	);
 })();
 //=============== END - DECLARATION DU FORMULAIRE ===============//
-//=============== START - VALIDATION DU FORMULAIRE ===============//
 
 //10- Validation d'un champ REQUIRED : validateRequired
 function validateRequired(input) {
@@ -76,6 +75,11 @@ function validatePostCode(input) {
 	return input.value.match('^(0[1-9]|[1-9][0-9])[0-9][0-9][0-9]$');
 }
 
+//21- Validation addresse : n° & type & nom
+function validateAddress(input) {
+	return input.value.match(/^\s*\S+(?:\s+\S+){2}/);
+}
+//=============== START - VALIDATION DU FORMULAIRE ===============//
 //11- Validations globales : creation fonction qui récup ttes validations = validateFields
 function validateFields(input) {
 	//12- Récup champ des inputs - une fs récup lancer la validation
@@ -111,6 +115,14 @@ function validateFields(input) {
 	if (fieldName == 'postCode') {
 		//20b- lance validation validatePostCode
 		if (!validatePostCode(input)) {
+			return false;
+		}
+		return true;
+	}
+	//21a- condition pr lancer la valid.
+	if (fieldName == 'address') {
+		//21b- lance validation validateAddress
+		if (!validateAddress(input)) {
 			return false;
 		}
 		return true;
