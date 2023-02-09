@@ -79,6 +79,12 @@ function validatePostCode(input) {
 function validateAddress(input) {
 	return input.value.match(/^\s*\S+(?:\s+\S+){2}/);
 }
+
+//22- Validation du Numéro de téléphone
+function validatePhoneNumber(input) {
+	return input.value.match(/^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/);
+}
+
 //=============== START - VALIDATION DU FORMULAIRE ===============//
 //11- Validations globales : creation fonction qui récup ttes validations = validateFields
 function validateFields(input) {
@@ -105,24 +111,46 @@ function validateFields(input) {
 	}
 	//19a- condition pr lancer la valid.
 	if (fieldName == 'email') {
+		if (!validateRequired(input)) {
+			return false;
+		}
 		//19b- lance validation validateEmail
 		if (!validateEmail(input)) {
 			return false;
 		}
 		return true;
 	}
-	//20a- condition pr lancer la valid.
-	if (fieldName == 'postCode') {
-		//20b- lance validation validatePostCode
-		if (!validatePostCode(input)) {
+
+	//22a- Validaton de l'input NUMERO DE TELEPHONE
+	if (fieldName == 'phoneNumber') {
+		if (!validateRequired(input)) {
 			return false;
 		}
+
+		if (!validatePhoneNumber(input)) {
+			return false;
+		}
+
 		return true;
 	}
 	//21a- condition pr lancer la valid.
 	if (fieldName == 'address') {
+		if (!validateRequired(input)) {
+			return false;
+		}
 		//21b- lance validation validateAddress
 		if (!validateAddress(input)) {
+			return false;
+		}
+		return true;
+	}
+	//20a- condition pr lancer la valid.
+	if (fieldName == 'postCode') {
+		if (!validateRequired(input)) {
+			return false;
+		}
+		//20b- lance validation validatePostCode
+		if (!validatePostCode(input)) {
 			return false;
 		}
 		return true;
