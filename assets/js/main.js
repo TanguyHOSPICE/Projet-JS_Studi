@@ -44,7 +44,7 @@
 	);
 })();
 //=============== END - DECLARATION DU FORMULAIRE ===============//
-
+//=============== START - FONCTIONS DE VALIDATION ===============//
 //10- Validation d'un champ REQUIRED : validateRequired
 function validateRequired(input) {
 	return !(input.value == null || input.value == '');
@@ -89,7 +89,7 @@ function validatePhoneNumber(input) {
 function validateTerms(input) {
 	return input.checked;
 }
-
+//=============== END - FONCTIONS DE VALIDATION ===============//
 //=============== START - VALIDATION DU FORMULAIRE ===============//
 //11- Validations globales : creation fonction qui récup ttes validations = validateFields
 function validateFields(input) {
