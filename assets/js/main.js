@@ -114,6 +114,22 @@ function validateFields(input) {
 
 		return true;
 	}
+	//24- Validaton de l'input NOM
+	if (fieldName == 'lastName') {
+		if (!validateRequired(input)) {
+			return false;
+		}
+
+		if (!validateLength(input, 2, 20)) {
+			return false;
+		}
+
+		if (!validateText(input)) {
+			return false;
+		}
+
+		return true;
+	}
 	//19a- condition pr lancer la valid.
 	if (fieldName == 'email') {
 		if (!validateRequired(input)) {
@@ -147,6 +163,14 @@ function validateFields(input) {
 		if (!validateAddress(input)) {
 			return false;
 		}
+		return true;
+	}
+	//25- Validaton de l'input VILLE
+	if (fieldName == 'city') {
+		if (!validateRequired(input)) {
+			return false;
+		}
+
 		return true;
 	}
 	//20a- condition pr lancer la valid.
